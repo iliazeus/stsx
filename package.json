@@ -4,7 +4,7 @@
   "description": "A very simple TSX-based static site generation library. Pronounced \"sticks\".",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "node scripts/prepare.js && tsc",
+    "prepare": "tsc",
     "build": "tsc"
   },
   "repository": {
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/iliazeus/stsx#readme",
   "devDependencies": {
     "@types/node": "^18.11.7",
-    "@types/react": "^18.0.24",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   }
