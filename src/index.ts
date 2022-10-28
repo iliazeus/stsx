@@ -28,7 +28,7 @@ async function* intrinsicElement(
 ): AsyncIterable<Buffer> {
   yield Buffer.from(`<${el} `);
 
-  for (const [key, value] of Object.entries(props)) {
+  for (const [key, value] of Object.entries(props ?? {})) {
     if (key === "children") continue;
     yield Buffer.from(` ${String(key)}="${String(value)}"`);
   }
