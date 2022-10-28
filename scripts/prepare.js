@@ -4,21 +4,20 @@ const path = require("path");
 main();
 
 function main() {
-  unglobalReactJsx();
-  copyGlobalDts();
+  copyReactJsxTypings();
 }
 
-function unglobalReactJsx() {
-  const dtsPath = path.join(__dirname, "../node_modules/@types/react/index.d.ts");
-  let contents = fs.readFileSync(dtsPath, "utf-8");
-  contents = contents.replace(/namespace JSX/g, "namespace __ReactJSX");
-  fs.writeFileSync(dtsPath, contents, "utf-8");
-}
+function copyReactJsxTypings() {
+  const srcDir = path.join(__dirname, "../node_modules/@types/react");
+  const srcPath = path.join(__dirname, "../node_modules/@types/react/index.d.ts");
 
-function copyGlobalDts() {
-  const srcFile = path.join(__dirname, "../src/global.d.ts");
-  const outDir = path.join(__dirname, "../dist");
-  const outFile = path.join(__dirname, "../dist/global.d.ts");
+  const outDir = path.join(__dirname, "../src");
+  const outPath = path.join(__dirname, "../src/react.d.ts");
+
+  let contents = fs.readFileSync(srcPath, "utf-8");
+  contents = contents.replace(/declare global/g, "export namespace __ReactGlobal");
+
   fs.mkdirSync(outDir, { recursive: true });
-  fs.copyFileSync(srcFile, outFile);
+  fs.writeFileSync(outPath, contents, "utf-8");
+  fs.rmSync(srcDir, { recursive: true, force: true });
 }

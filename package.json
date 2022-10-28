@@ -4,7 +4,7 @@
   "description": "A very simple TSX-based static site generation library. Pronounced \"sticks\".",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "tsc && node scripts/prepare.js",
+    "prepare": "node scripts/prepare.js && tsc",
     "build": "tsc"
   },
   "repository": {

@@ -1,4 +1,13 @@
 import { Readable } from "node:stream";
+import { __ReactGlobal } from "./react";
+
+declare global {
+  namespace JSX {
+    type Element = import("node:stream").Readable;
+    type ElementClass = null;
+    type IntrinsicElements = __ReactGlobal.JSX.IntrinsicElements;
+  }
+}
 
 export function createElement(
   el: string | Function,
