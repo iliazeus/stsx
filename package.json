@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "prepare": "node scripts/prepare.js",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "tsc"
   },
   "repository": {
     "type": "git",
