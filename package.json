@@ -1,0 +1,31 @@
+{
+  "name": "stsx",
+  "version": "0.1.0",
+  "description": "A very simple TSX-based static site generation library. Pronounced \"sticks\".",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "node scripts/prepare.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iliazeus/stsx.git"
+  },
+  "keywords": [
+    "TSX",
+    "static",
+    "sites"
+  ],
+  "author": "Ilia Pozdnyakov <ilia.pozdnyakov@ya.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iliazeus/stsx/issues"
+  },
+  "homepage": "https://github.com/iliazeus/stsx#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "@types/react": "^18.0.24",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}
