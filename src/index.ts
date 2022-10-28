@@ -41,7 +41,7 @@ async function* intrinsicElement(
   yield Buffer.from(`>`);
 
   for (const child of children) {
-    if (Symbol.asyncIterator in child) {
+    if (typeof child === "object" && child !== null && Symbol.asyncIterator in child) {
       yield* child;
     } else if (Buffer.isBuffer(child)) {
       yield child;
