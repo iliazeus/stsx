@@ -53,8 +53,8 @@ async function* intrinsicElement(
   yield Buffer.from(`</${el}>`);
 }
 
-export function Fragment(_props: null, ...children: Readable[]): Readable {
-  return Readable.from(fragment(children));
+export function Fragment(props: { children: Readable[] }): Readable {
+  return Readable.from(fragment(props.children));
 }
 
 async function* fragment(children: Readable[]): AsyncIterable<Buffer> {
